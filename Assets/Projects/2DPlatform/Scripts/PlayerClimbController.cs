@@ -24,20 +24,20 @@ public class PlayerClimbController : MonoBehaviour
             //extraGravity = 0;
 
             ladderProgress = Mathf.InverseLerp(
-                ladder.bottom.position.y
-            , ladder.top.position.y
-            , transform.position.y
+                ladder.bottomOn.position.y
+            ,   ladder.topOn.position.y
+            ,   transform.position.y
             );
 
             SetPositionOnLadder();
         }
 
         if (isClimbing)
-        {
+         {
 
-            LadderMove();
+           LadderMove();
 
-            return; //if code is run succesfully, don't execute code below this line within the void
+           return; //if code is run succesfully, don't execute code below this line within the void
         }
 
     }
@@ -45,10 +45,10 @@ public class PlayerClimbController : MonoBehaviour
 
     private void SetPositionOnLadder()
     {
-        transform.position = Vector3.Lerp(
-            ladder.bottom.position
-        , ladder.top.position
-        , ladderProgress
+        transform.position = Vector3.Lerp( //lerp uses two points to record a linear progression (position is recorded between 0-1)
+            ladder.bottomOn.position
+        ,   ladder.topOn.position
+        ,   ladderProgress
         );
     }
 
@@ -60,32 +60,29 @@ public class PlayerClimbController : MonoBehaviour
         SetPositionOnLadder();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-
-        if (collision.tag == "Ladder")
+                if (collision.tag == "Ladder/On")
         {
             ladder = collision.GetComponentInParent<Ladder>();
         }
+    }
 
-        if (collision.transform == ladder.top)
-        {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Ladder/Off")
+        {        
             Debug.Log("suceed");
             isClimbing = false;
         }
 
-        if (collision.transform == ladder.bottom)
-        {
-            if (Input.GetButtonDown("Horizontal") && ladder)
-            {
-                Debug.Log("qehquwi");
-            }
-        }
+ 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ladder" && !isClimbing)
+        if (collision.tag == "Ladder/On" && !isClimbing)
         {
             ladder = null;
         }

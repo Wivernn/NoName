@@ -10,7 +10,8 @@ TagManager:
   - Enemy
   - Pit
   - start
-  - Ladder
+  - Ladder/On
+  - Ladder/Off
   layers:
   - Default
   - TransparentFX

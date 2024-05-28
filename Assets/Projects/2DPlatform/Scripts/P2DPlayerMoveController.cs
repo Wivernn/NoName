@@ -10,6 +10,9 @@ public class P2DPlayerMoveController : MonoBehaviour
     public float bounceForce = 20;
     public float extraGravity = 10;
 
+    // Start facing right (like the sprite-sheet)
+    private bool facingRight = true;
+    private Animator animator;
     private float h;
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -20,11 +23,26 @@ public class P2DPlayerMoveController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator= GetComponent<Animator>();
     }
 
     void Update()
     {
-        GroundedMove();      
+        GroundedMove();
+
+        // Pass in the current velocity of the RigidBody2D
+        // The speed parameter of the Animator now knows
+        // how fast the player is moving and responds accordingly
+        if (isGrounded == true)
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+
+        // Check which way the player is facing 
+        // and call reverseImage if neccessary
+        if (h < 0 && facingRight)
+            reverseImage();
+        else if (h > 0 && !facingRight)
+            reverseImage();
     }
 
 
@@ -54,11 +72,26 @@ public class P2DPlayerMoveController : MonoBehaviour
         force.y = rb.velocity.y;
 
         rb.AddForce(inputVector * moveForce);
-
         // Apply extra gravity. Maybe you only want this while jumping.
         rb.velocity += Vector2.down * extraGravity * Time.fixedDeltaTime;
 
         isJump = false;
+
+
+
+    }
+
+    void reverseImage()
+    {
+        // Switch the value of the Boolean
+        facingRight = !facingRight;
+
+        // Get and store the local scale of the RigidBody2D
+        Vector2 theScale = rb.transform.localScale;
+
+        // Flip it around the other way
+        theScale.x *= -1;
+        rb.transform.localScale = theScale;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

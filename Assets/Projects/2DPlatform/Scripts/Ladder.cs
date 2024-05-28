@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-   public Transform top;
-    public Transform bottom;
+   public Transform topOn;
+   public Transform topOff;
+    public Transform bottomOn;
+    public Transform bottomOff;
 
 }
