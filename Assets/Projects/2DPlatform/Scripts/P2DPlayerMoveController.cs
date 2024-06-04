@@ -5,10 +5,10 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class P2DPlayerMoveController : MonoBehaviour
 {
-    public float moveForce = 10;
-    public float jumpForce = 20;
-    public float bounceForce = 20;
-    public float extraGravity = 10;
+    private float moveForce = 7;
+    private float jumpForce = 12;
+   // public float bounceForce = 20;
+    private float extraGravity = 10;
 
     // Start facing right (like the sprite-sheet)
     private bool facingRight = true;
@@ -71,10 +71,11 @@ public class P2DPlayerMoveController : MonoBehaviour
         Vector3 force = inputVector * moveForce;
         force.y = rb.velocity.y;
 
-        rb.AddForce(inputVector * moveForce);
-        // Apply extra gravity. Maybe you only want this while jumping.
-        rb.velocity += Vector2.down * extraGravity * Time.fixedDeltaTime;
-
+      //  rb.AddForce(inputVector * moveForce);
+           // Apply extra gravity. Maybe you only want this while jumping.
+        rb.velocity = force;
+            rb.velocity += Vector2.down * extraGravity * Time.fixedDeltaTime;
+     
         isJump = false;
 
 
@@ -115,14 +116,14 @@ public class P2DPlayerMoveController : MonoBehaviour
         contacts.Remove(collision.transform);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bouncy")
         {
             rb.velocity = (Vector2)collision.transform.up * bounceForce;
         }
 
-    }
+    } */
 
 
 

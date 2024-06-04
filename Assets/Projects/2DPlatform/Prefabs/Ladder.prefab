@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1670656477624807168}
   - component: {fileID: 4488375002073337970}
   m_Layer: 0
-  m_Name: bottom
-  m_TagString: Untagged
+  m_Name: bottomOn
+  m_TagString: Ladder/On
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 630404008365933072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.449993, y: 7.13, z: 0}
-  m_LocalScale: {x: 1.1049467, y: 1.4362665, z: 1}
+  m_LocalPosition: {x: 38.45, y: 7.147, z: 0}
+  m_LocalScale: {x: 1.1049467, y: 0.27619407, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144007961454158968}
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630404008365933072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -143,8 +143,8 @@ GameObject:
   - component: {fileID: 5929630618506727557}
   - component: {fileID: 2141979887742615041}
   m_Layer: 0
-  m_Name: bottom (1)
-  m_TagString: Ladder
+  m_Name: bottomOff
+  m_TagString: Ladder/Off
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,8 +158,8 @@ Transform:
   m_GameObject: {fileID: 4212684749905458158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.449993, y: 6.47, z: 0}
-  m_LocalScale: {x: 1.1049467, y: 1.4362665, z: 1}
+  m_LocalPosition: {x: 38.45, y: 6.485, z: 0}
+  m_LocalScale: {x: 1.1049467, y: 0.24718146, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144007961454158968}
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7924528, g: 0.76006407, b: 0.3700605, a: 1}
+  m_Color: {r: 0.8867924, g: 0.86293393, b: 0.56470275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -274,8 +274,8 @@ GameObject:
   - component: {fileID: 6523934653807318106}
   - component: {fileID: 4528219760642008465}
   m_Layer: 0
-  m_Name: top
-  m_TagString: Untagged
+  m_Name: topOff
+  m_TagString: Ladder/Off
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,8 +289,8 @@ Transform:
   m_GameObject: {fileID: 6699145723021877562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.45, y: 17.79, z: 0}
-  m_LocalScale: {x: 1.1049467, y: 1.4362665, z: 1}
+  m_LocalPosition: {x: 38.45, y: 20.18, z: 0}
+  m_LocalScale: {x: 1.1049467, y: 0.27504504, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144007961454158968}
@@ -335,9 +335,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -695318911
   m_SortingLayer: 5
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7924528, g: 0.76006407, b: 0.3700605, a: 1}
+  m_Color: {r: 0.8862746, g: 0.86274517, b: 0.5647059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -354,7 +354,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6699145723021877562}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -377,7 +377,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1589319595591759132}
   m_Layer: 0
   m_Name: topOn
-  m_TagString: Ladder
+  m_TagString: Ladder/On
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,8 +420,8 @@ Transform:
   m_GameObject: {fileID: 7232209606512575161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.43, y: 17.74, z: 0}
-  m_LocalScale: {x: 1.1049467, y: 1.5842476, z: 1}
+  m_LocalPosition: {x: 38.45, y: 18.6339, z: 0}
+  m_LocalScale: {x: 1.1049467, y: 3.0882618, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144007961454158968}
@@ -573,8 +573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9115e50c592571d409b955a5f2c2c35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  top: {fileID: 7978505187830531351}
-  bottom: {fileID: 4116478773347334920}
+  topOn: {fileID: 949023808712921918}
+  topOff: {fileID: 7978505187830531351}
+  bottomOn: {fileID: 4116478773347334920}
+  bottomOff: {fileID: 3536641624723834746}
 --- !u!1 &7928286988760469404
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +604,8 @@ Transform:
   m_GameObject: {fileID: 7928286988760469404}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.449993, y: 12.1787, z: 0}
-  m_LocalScale: {x: 1.1049467, y: 9.941917, z: 1}
+  m_LocalPosition: {x: 38.45, y: 11.9423, z: 0}
+  m_LocalScale: {x: 1.1049467, y: 9.469992, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1144007961454158968}
