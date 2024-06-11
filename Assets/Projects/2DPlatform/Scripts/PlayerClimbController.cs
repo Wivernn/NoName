@@ -4,7 +4,6 @@ public class PlayerClimbController : MonoBehaviour
 {
     public Ladder ladder;
     public float ladderProgress;
-
     private bool isVerticalPressed;
     public bool isClimbing;
     private float v;

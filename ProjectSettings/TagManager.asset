@@ -12,6 +12,7 @@ TagManager:
   - start
   - Ladder/On
   - Ladder/Off
+  - Hidden
   layers:
   - Default
   - TransparentFX

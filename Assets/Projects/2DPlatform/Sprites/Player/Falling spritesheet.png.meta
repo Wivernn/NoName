@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7274c622cef74c7449223f582bd751ab
+guid: ab693636efb3c9846933030d6deebcc2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -143,85 +143,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jumping spritesheet_0
+      name: Falling spritesheet_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 196
-        width: 26
+        x: 80
+        y: 199
+        width: 27
         height: 53
-      alignment: 9
-      pivot: {x: 0.35451883, y: 0.4928632}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89edfb807336bad4aa13905aed0fa2f1
-      internalID: 2142539787
+      spriteID: 1c3ed466fcb16a84d9d8e5294c079632
+      internalID: 1638412575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jumping spritesheet_1
+      name: Falling spritesheet_2
       rect:
         serializedVersion: 2
-        x: 79
-        y: 196
-        width: 26
+        x: 145
+        y: 193
+        width: 27
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93bfe894d7007a94784ebab4f5570fa8
-      internalID: 58800492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jumping spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 142
-        y: 197
-        width: 26
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0932cb28a4ded6f4cb54e3f91a1e1a61
-      internalID: 1087019703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jumping spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 197
-        width: 26
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99cbbeb69fad62147b5c8c0a94f563b0
-      internalID: -1555996362
+      spriteID: 431a7d0d0e9636240957c91357312ac7
+      internalID: -516224287
       vertices: []
       indices: 
       edges: []
@@ -229,7 +187,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e9a88f2ef34dda74d9cb12b0586762b8
+    spriteID: a567701a85a71d340bf50cc697c38ec6
     internalID: 0
     vertices: []
     indices: 
@@ -237,10 +195,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jumping spritesheet_0: 2142539787
-      Jumping spritesheet_1: 58800492
-      Jumping spritesheet_2: 1087019703
-      Jumping spritesheet_3: -1555996362
+      Falling spritesheet_0: -1079661956
+      Falling spritesheet_1: 1638412575
+      Falling spritesheet_2: -516224287
+      Falling spritesheet_3: 998140106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
