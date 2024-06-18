@@ -1,22 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class HiddenRoom : MonoBehaviour
 {
-
-    // Update is called once per frame
-    void Update()
+    SpriteRenderer spr;
+    Coroutine cor;
+    private void Awake()
     {
-        //gameObject.SetActive(true);
+        spr = GetComponent<SpriteRenderer>();
     }
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Hidden")
+        if (cor != null)
         {
-            Debug.Log("test");
-            gameObject.SetActive(false);
+            StopCoroutine(cor);
+        }
+        cor = StartCoroutine(Fadeout());
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (cor != null)
+        {
+            StopCoroutine(cor);
+        }
+        cor = StartCoroutine(Fadein());
+
+    }
+
+    IEnumerator Fadeout()
+    {
+        float duration = 2.0f;
+        float t = 0;
+        if (t < duration)
+        {
+            t += Time.deltaTime;
+            // Debug.Log("Other coroutine complete in... " + (_duration - t));
+
+            Color c = spr.color;
+            for (float alpha = 1f; alpha >= 0.2; alpha -= 0.01f)
+            {
+                c.a = alpha;
+                spr.color = c;
+                yield return null;
+            }
+        }
+    }
+
+    IEnumerator Fadein()
+    {
+        float duration = 2.0f;
+
+        float t = 0;
+        if (t < duration)
+        {
+            t += Time.deltaTime;
+            // Debug.Log("Other coroutine complete in... " + (_duration - t));
+
+            Color c = spr.color;
+            for (float alpha = 1f; alpha <= 1; alpha += 0.01f)
+            {
+                c.a = alpha;
+                spr.color = c;
+                yield return null;
+            }
         }
     }
 }
+

@@ -24,19 +24,19 @@ public class PlayerClimbController : MonoBehaviour
 
             ladderProgress = Mathf.InverseLerp(
                 ladder.bottomOn.position.y
-            ,   ladder.topOn.position.y
-            ,   transform.position.y
+            , ladder.topOn.position.y
+            , transform.position.y
             );
 
             SetPositionOnLadder();
         }
 
         if (isClimbing)
-         {
+        {
 
-           LadderMove();
+            LadderMove();
 
-           return; //if code is run succesfully, don't execute code below this line within the void
+            return; //if code is run succesfully, don't execute code below this line within the void
         }
 
     }
@@ -46,8 +46,8 @@ public class PlayerClimbController : MonoBehaviour
     {
         transform.position = Vector3.Lerp( //lerp uses two points to record a linear progression (position is recorded between 0-1)
             ladder.bottomOn.position
-        ,   ladder.topOn.position
-        ,   ladderProgress
+        , ladder.topOn.position
+        , ladderProgress
         );
     }
 
@@ -61,7 +61,7 @@ public class PlayerClimbController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-                if (collision.tag == "Ladder/On")
+        if (collision.tag == "Ladder/On")
         {
             ladder = collision.GetComponentInParent<Ladder>();
         }
@@ -71,12 +71,12 @@ public class PlayerClimbController : MonoBehaviour
     {
 
         if (collision.tag == "Ladder/Off")
-        {        
+        {
             Debug.Log("suceed");
             isClimbing = false;
         }
 
- 
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
