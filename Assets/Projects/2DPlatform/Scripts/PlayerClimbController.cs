@@ -9,6 +9,7 @@ public class PlayerClimbController : MonoBehaviour
     private float v;
     private float climbSpeed = 1;
 
+    //---------------------------------------------------------------------------------------------
 
     private void Update()
     {
@@ -41,6 +42,7 @@ public class PlayerClimbController : MonoBehaviour
 
     }
 
+    //---------------------------------------------------------------------------------------------
 
     private void SetPositionOnLadder()
     {
@@ -58,6 +60,8 @@ public class PlayerClimbController : MonoBehaviour
         ladderProgress += v * climbSpeed * Time.deltaTime;
         SetPositionOnLadder();
     }
+
+    //---------------------------------------------------------------------------------------------
 
     private void OnTriggerStay2D(Collider2D collision)
     {

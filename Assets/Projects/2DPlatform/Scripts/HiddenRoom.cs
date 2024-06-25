@@ -8,10 +8,15 @@ public class HiddenRoom : MonoBehaviour
 {
     SpriteRenderer spr;
     Coroutine cor;
+
+    //---------------------------------------------------------------------------------------------
+
     private void Awake()
     {
         spr = GetComponent<SpriteRenderer>();
     }
+
+    //---------------------------------------------------------------------------------------------
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,9 +37,12 @@ public class HiddenRoom : MonoBehaviour
 
     }
 
+    //---------------------------------------------------------------------------------------------
+    //coroutines
+
     IEnumerator Fadeout()
     {
-        float duration = 2.0f;
+        float duration = 2.0f; //duration lasts for 2 seconds
         float t = 0;
         if (t < duration)
         {
@@ -48,6 +56,9 @@ public class HiddenRoom : MonoBehaviour
                 spr.color = c;
                 yield return null;
             }
+            {
+
+            }
         }
     }
 
@@ -55,7 +66,7 @@ public class HiddenRoom : MonoBehaviour
     {
         float duration = 2.0f;
 
-        float t = 0;
+        float t = 1;
         if (t < duration)
         {
             t += Time.deltaTime;

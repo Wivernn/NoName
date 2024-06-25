@@ -6,6 +6,8 @@ using UnityEngine.Rendering.PostProcessing;
 [ExecuteInEditMode]
 public class P2DPlayerMoveController : MonoBehaviour
 {
+    public Enemy enemy;
+
     private float moveForce = 7;
     private float jumpForce = 12;
     // public float bounceForce = 20;
@@ -22,12 +24,15 @@ public class P2DPlayerMoveController : MonoBehaviour
     private bool isJump;
     private List<Transform> contacts = new();
 
+    //---------------------------------------------------------------------------------------------
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
+
+    //---------------------------------------------------------------------------------------------
 
     void Update()
     {
@@ -48,7 +53,6 @@ public class P2DPlayerMoveController : MonoBehaviour
         else if (h > 0 && !facingRight)
             reverseImage();
 
-        //animator.SetFloat("V", rb.velocity.normalized.y);
 
        /* if (rb.velocity.y > 0)
         {
@@ -63,6 +67,8 @@ public class P2DPlayerMoveController : MonoBehaviour
             animator.SetBool("Falling", true);
 
         } */
+       //above code is what was previously used, but caused an issue on one
+       //platform where playercharacter was stuck in the jumping animation
 
         bool isrising = rb.velocity.y > 0;
                 animator.SetBool("Jumping", isrising);
@@ -77,17 +83,8 @@ public class P2DPlayerMoveController : MonoBehaviour
         
     }
 
+    //---------------------------------------------------------------------------------------------
 
-
-    void GroundedMove()
-    {
-        h = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            isJump = true;
-        }
-    }
 
     private void FixedUpdate()
     {
@@ -115,18 +112,7 @@ public class P2DPlayerMoveController : MonoBehaviour
 
     }
 
-    void reverseImage()
-    {
-        // Switch the value of the Boolean
-        facingRight = !facingRight;
-
-        // Get and store the local scale of the RigidBody2D
-        Vector2 theScale = rb.transform.localScale;
-
-        // Flip it around the other way
-        theScale.x *= -1;
-        rb.transform.localScale = theScale;
-    }
+    //---------------------------------------------------------------------------------------------
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -144,21 +130,39 @@ public class P2DPlayerMoveController : MonoBehaviour
         }
     }
 
+    //---------------------------------------------------------------------------------------------
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         contacts.Remove(collision.transform);
     }
 
-    /* private void OnTriggerEnter2D(Collider2D collision)
-     {
-         if (collision.tag == "Bouncy")
-         {
-             rb.velocity = (Vector2)collision.transform.up * bounceForce;
-         }
 
-     } */
+    //---------------------------------------------------------------------------------------------
+    //extracted methods
 
+    void reverseImage()
+    {
+        // Switch the value of the Boolean
+        facingRight = !facingRight;
 
+        // Get and store the local scale of the RigidBody2D
+        Vector2 theScale = rb.transform.localScale;
+
+        // Flip it around the other way
+        theScale.x *= -1;
+        rb.transform.localScale = theScale;
+    }
+
+    void GroundedMove()
+    {
+        h = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJump = true;
+        }
+    }
 
     private bool GetIsGrounded()
     {
