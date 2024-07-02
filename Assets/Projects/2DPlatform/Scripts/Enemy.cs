@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
 
     public Transform detectionRange;
-    public BoxCollider2D sightLine;
+    public Transform sightLine;
     public int health = 10;
     public bool aggression;
     public float speed = 2f;
