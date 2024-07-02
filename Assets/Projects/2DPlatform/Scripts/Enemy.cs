@@ -28,24 +28,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       if (collision.transform == detectionRange) //need to find a way to detect collision from player
-        {
-            Debug.Log("AAAAA");
-            aggression = true; //once the player has entered the enemies detection range box, trigger aggression
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision == sightLine)
-        {
-            Debug.Log("done");
-            aggression = false;
-        }
-    }
-
     private void Update()
     {
         if (aggression) 
@@ -58,6 +40,24 @@ public class Enemy : MonoBehaviour
     {
         maxHealth = health;
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.transform == detectionRange) //need to find a way to detect collision from player
+        {
+            Debug.Log("Player detected");
+            aggression = true; //once the player has entered the enemies detection range box, trigger aggression
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision == sightLine)
+        {
+            Debug.Log("Enemy passive");
+            aggression = false;
+        }
     }
 
 

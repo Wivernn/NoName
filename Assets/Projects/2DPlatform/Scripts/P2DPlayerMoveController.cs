@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -23,6 +24,7 @@ public class P2DPlayerMoveController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isJump;
     private List<Transform> contacts = new();
+    Coroutine coroutine;
 
     //---------------------------------------------------------------------------------------------
 
@@ -80,8 +82,29 @@ public class P2DPlayerMoveController : MonoBehaviour
             animator.SetBool("Jumping", false) ;
         }
 
-        
+        if (Input.GetMouseButtonDown(0)) //0 = left click
+        {
+            //if the player is jumping/falling, they will be unable to attack
+            //(may change in future if I decide to make a jump attack)
+            if (animator.GetBool("Jumping") == true | animator.GetBool("Falling") == true)
+            {
+                return;
+            }
+            else
+            {
+            animator.SetBool("Attack", true);
+            coroutine = StartCoroutine(Attack(0.6f));
+            }
+        }
+
     }
+
+   IEnumerator Attack(float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.SetBool("Attack", false);
+    }
+
 
     //---------------------------------------------------------------------------------------------
 
@@ -89,13 +112,24 @@ public class P2DPlayerMoveController : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = GetIsGrounded();
+        
+        if (animator.GetBool("Attack") == true)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            return;
+          //prevents player from moving around while attacking
+        }
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //^ had to readd freezerotation as otherwise character becomes accidental badly trained acrobat
+
 
         if (isJump && isGrounded)
         {
             rb.velocity += new Vector2(0, jumpForce);
         }
         //vector2 refers to how an object moves in a 2d space
-
+         
 
         Vector3 inputVector = new(h, 0);
         Vector3 force = inputVector * moveForce;
@@ -130,13 +164,17 @@ public class P2DPlayerMoveController : MonoBehaviour
         }
     }
 
-    //---------------------------------------------------------------------------------------------
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         contacts.Remove(collision.transform);
     }
 
+    //---------------------------------------------------------------------------------------------
+
+    private bool GetIsGrounded()
+    {
+        return contacts.Count > 0;
+    }
 
     //---------------------------------------------------------------------------------------------
     //extracted methods
@@ -164,9 +202,5 @@ public class P2DPlayerMoveController : MonoBehaviour
         }
     }
 
-    private bool GetIsGrounded()
-    {
-        return contacts.Count > 0;
-    }
 }
 

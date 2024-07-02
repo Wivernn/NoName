@@ -22,7 +22,7 @@ public class HiddenRoom : MonoBehaviour
     {
         if (cor != null)
         {
-            StopCoroutine(cor);
+            StopCoroutine(cor); //prevents corountines from being active at same time
         }
         cor = StartCoroutine(Fadeout());
     }
@@ -47,10 +47,12 @@ public class HiddenRoom : MonoBehaviour
         if (t < duration)
         {
             t += Time.deltaTime;
-            // Debug.Log("Other coroutine complete in... " + (_duration - t));
+            // Debug.Log("Coroutine succefully executed");
+            //used to test if coroutine was successful before adding transparency
 
             Color c = spr.color;
             for (float alpha = 1f; alpha >= 0.2; alpha -= 0.01f)
+                //gradually adjusts the alpha (opacity) of the hidden area until space is visible behind the barrier
             {
                 c.a = alpha;
                 spr.color = c;
@@ -70,7 +72,6 @@ public class HiddenRoom : MonoBehaviour
         if (t < duration)
         {
             t += Time.deltaTime;
-            // Debug.Log("Other coroutine complete in... " + (_duration - t));
 
             Color c = spr.color;
             for (float alpha = 1f; alpha <= 1; alpha += 0.01f)

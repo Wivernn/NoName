@@ -16,12 +16,14 @@ public class PlayerClimbController : MonoBehaviour
         isVerticalPressed = Input.GetButtonDown("Vertical");
         if (isVerticalPressed && ladder)
         {
-            Debug.Log("dgr");
+            //detect to see if player is currently climbing
+            Debug.Log("Player on ladder");
 
             isClimbing = true;
 
             //rb.gravityScale = 0;
             //extraGravity = 0;
+            //gravity scale and extra gravity were removed due to causing issues with player movement
 
             ladderProgress = Mathf.InverseLerp(
                 ladder.bottomOn.position.y
@@ -59,12 +61,14 @@ public class PlayerClimbController : MonoBehaviour
 
         ladderProgress += v * climbSpeed * Time.deltaTime;
         SetPositionOnLadder();
+        //determins where on the ladder the player is currently
     }
 
     //---------------------------------------------------------------------------------------------
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+     //detect whether or not player is colliding with ladder enter or exit points
         if (collision.tag == "Ladder/On")
         {
             ladder = collision.GetComponentInParent<Ladder>();
@@ -76,7 +80,7 @@ public class PlayerClimbController : MonoBehaviour
 
         if (collision.tag == "Ladder/Off")
         {
-            Debug.Log("suceed");
+            Debug.Log("Player can enter/exit ladder"); 
             isClimbing = false;
         }
 
