@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
 
-    public Transform detectionRange;
-    public Transform sightLine;
-    public int health = 10;
-    public bool aggression;
-    public float speed = 2f;
 
-    public Enemy[] test; 
+    public int health = 10;
+    public float speed = 4f;
+    public EnemyDetect enemyDetect;
+
 
 
     private Transform target;
@@ -30,9 +28,17 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (aggression) 
+        if (enemyDetect.aggression == true) 
         {
 
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            GetComponent <RandomWalker> ().enabled = false;
+            //disabling the walker means the enemy won't get stuck trying to execute the chasse and stay on the designated path at the same time
+        }
+        
+        if (enemyDetect.aggression == false)
+        {
+            GetComponent <RandomWalker> ().enabled = true;
         }
     }
 
@@ -40,30 +46,7 @@ public class Enemy : MonoBehaviour
     {
         maxHealth = health;
 
+        target = GameObject.FindWithTag("Player").transform;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       if (collision.transform == detectionRange) //need to find a way to detect collision from player
-        {
-            Debug.Log("Player detected");
-            aggression = true; //once the player has entered the enemies detection range box, trigger aggression
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision == sightLine)
-        {
-            Debug.Log("Enemy passive");
-            aggression = false;
-        }
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-
-    }
 }

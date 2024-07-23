@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8757028061626098152
+--- !u!1 &7191074398290097551
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8338826799620275008}
-  - component: {fileID: 642380378677399474}
+  - component: {fileID: 3974673923922795056}
+  - component: {fileID: 4051873905478549404}
   m_Layer: 0
-  m_Name: Path1
+  m_Name: Path2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8338826799620275008
+--- !u!4 &3974673923922795056
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757028061626098152}
+  m_GameObject: {fileID: 7191074398290097551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.28, y: -8.6, z: -0.9934009}
+  m_LocalPosition: {x: 18.102623, y: -4.834757, z: -0.74160653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &642380378677399474
+--- !u!114 &4051873905478549404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757028061626098152}
+  m_GameObject: {fileID: 7191074398290097551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b304a4cf041b54bb02d224dcbe12cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - position: {x: 74.6039, y: -8.2119, z: 0}
+  - position: {x: 14.267933, y: -12.279895, z: 0}
     connectedWaypointsIndices: 01000000
-  - position: {x: 77.80148, y: -8.167049, z: 0}
+  - position: {x: 18.482704, y: -12.289072, z: 0}
     connectedWaypointsIndices: 00000000

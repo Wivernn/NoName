@@ -20,21 +20,25 @@ public class HiddenRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (cor != null)
+        if (collision.tag == "Player")
         {
-            StopCoroutine(cor); //prevents corountines from being active at same time
+            if (cor != null)
+            {
+                StopCoroutine(cor); //prevents corountines from being active at same time
+            }
+            cor = StartCoroutine(Fadeout());
         }
-        cor = StartCoroutine(Fadeout());
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (cor != null)
+        if (collision.tag == "Player")
         {
-            StopCoroutine(cor);
+            if (cor != null)
+            {
+                StopCoroutine(cor);
+            }
+            cor = StartCoroutine(Fadein());
         }
-        cor = StartCoroutine(Fadein());
-
     }
 
     //---------------------------------------------------------------------------------------------

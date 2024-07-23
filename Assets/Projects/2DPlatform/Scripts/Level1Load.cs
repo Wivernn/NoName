@@ -10,6 +10,8 @@ public class Level1Load : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("Level1");
+
+            //player will load at start of scene, need to change
         }
     }
 }
