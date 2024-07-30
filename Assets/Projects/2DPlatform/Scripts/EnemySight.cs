@@ -6,6 +6,7 @@ public class EnemySight : MonoBehaviour
 {
     public EnemyDetect enemyDetect;
     public Transform toFollow; //set up the sightline to follow the enemy without making it a child object
+    public Enemy enemy;
 
 
     private Vector3 offset;
@@ -21,6 +22,11 @@ public class EnemySight : MonoBehaviour
     {
         transform.position = toFollow.position - offset;
         //transform.rotation = toFollow.rotation;
+
+            if (enemy.health < 1)
+            {
+                Destroy(gameObject);
+            }
 
     }
 

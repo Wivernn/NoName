@@ -5,7 +5,15 @@ using UnityEngine;
 public class EnemyDetect : MonoBehaviour
 {
     public bool aggression = false;
+    public Enemy enemy;
 
+    private void Update()
+    {
+        if (enemy.health <1)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

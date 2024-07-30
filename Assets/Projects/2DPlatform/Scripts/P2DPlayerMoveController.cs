@@ -51,9 +51,9 @@ public class P2DPlayerMoveController : MonoBehaviour
         // Check which way the player is facing 
         // and call reverseImage if neccessary
         if (h < 0 && facingRight)
-            reverseImage();
+            ReverseImage();
         else if (h > 0 && !facingRight)
-            reverseImage();
+            ReverseImage();
 
 
        /* if (rb.velocity.y > 0)
@@ -179,7 +179,7 @@ public class P2DPlayerMoveController : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     //extracted methods
 
-    void reverseImage()
+    void ReverseImage()
     {
         // Switch the value of the Boolean
         facingRight = !facingRight;

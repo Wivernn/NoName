@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Level1Load : MonoBehaviour
 {
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("Level1");
-
-            //player will load at start of scene, need to change
+            
+           //player will load at start of scene, need to change
         }
     }
 }
