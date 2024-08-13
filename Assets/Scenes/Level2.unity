@@ -1087,11 +1087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2912985492155403219, guid: 8fb10a1c701a1df409da2e0f6f4fc16b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 94.32
+      value: 63.9
       objectReference: {fileID: 0}
     - target: {fileID: 2912985492155403219, guid: 8fb10a1c701a1df409da2e0f6f4fc16b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -51.52
+      value: -35.2
       objectReference: {fileID: 0}
     - target: {fileID: 2912985492155403219, guid: 8fb10a1c701a1df409da2e0f6f4fc16b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2845,7 +2845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
+  health: 5
   speed: 2
   enemyDetect: {fileID: 2004308384}
 --- !u!114 &204873277
@@ -3565,6 +3565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4772697299326298724, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0603346c2bb2462438fe5955b9e56429, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5599,7 +5603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
+  health: 5
   speed: 4
   enemyDetect: {fileID: 1031713924}
 --- !u!114 &522787927
@@ -11956,7 +11960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
+  health: 5
   speed: 2
   enemyDetect: {fileID: 1670627424}
 --- !u!114 &1151853476
@@ -13094,7 +13098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
+  health: 5
   speed: 2
   enemyDetect: {fileID: 145734936}
 --- !u!114 &1259927334
@@ -23431,8 +23435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
-  speed: 2
+  health: 5
+  speed: 4
   enemyDetect: {fileID: 3116989958704082858}
 --- !u!4 &5447398086106249728
 Transform:
@@ -23478,7 +23482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   kbStunTime: 2
-  health: 10
+  health: 5
   speed: 4
   enemyDetect: {fileID: 3256450798391040337}
 --- !u!4 &5614285418194783483
@@ -23662,7 +23666,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

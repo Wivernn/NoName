@@ -1050,6 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077410156}
   - component: {fileID: 1077410157}
+  - component: {fileID: 1077410158}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1123,13 +1124,39 @@ MonoBehaviour:
   m_FillRect: {fileID: 198045889}
   m_HandleRect: {fileID: 2104745860}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1077410158}
+        m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
+        m_MethodName: SetLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1077410158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077410155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f25da170416744c963e4c0100598cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 0603346c2bb2462438fe5955b9e56429, type: 2}
+  slider: {fileID: 1077410157}
 --- !u!1 &1186430047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,11 +1574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1507799292926691043, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 444
+      value: 316
       objectReference: {fileID: 0}
     - target: {fileID: 1507799292926691043, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 238
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 1507799292926691043, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1585,6 +1612,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4772697299326298724, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0603346c2bb2462438fe5955b9e56429, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

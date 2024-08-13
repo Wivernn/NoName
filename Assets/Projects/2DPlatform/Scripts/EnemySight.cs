@@ -23,10 +23,10 @@ public class EnemySight : MonoBehaviour
         transform.position = toFollow.position - offset;
         //transform.rotation = toFollow.rotation;
 
-            if (enemy.health < 1)
+           /* if (enemy.health < 1)
             {
                 Destroy(gameObject);
-            }
+            } */
 
     }
 

@@ -9,10 +9,10 @@ public class EnemyDetect : MonoBehaviour
 
     private void Update()
     {
-        if (enemy.health <1)
+       /* if (enemy.health <1)
         {
             Destroy(gameObject);
-        }
+        } */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -12,12 +12,12 @@ public class P2DPlayerMoveController : MonoBehaviour
     private float moveForce = 7;
     private float jumpForce = 12;
     // public float bounceForce = 20;
+    public bool facingRight = true;
     private float extraGravity = 10;
 
 
 
     // Start facing right (like the sprite-sheet)
-    private bool facingRight = true;
     private Animator animator;
     private float h;
     private bool isGrounded;
@@ -85,7 +85,6 @@ public class P2DPlayerMoveController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //0 = left click
         {
             //if the player is jumping/falling, they will be unable to attack
-            //(may change in future if I decide to make a jump attack)
             if (animator.GetBool("Jumping") == true | animator.GetBool("Falling") == true)
             {
                 return;
@@ -121,7 +120,7 @@ public class P2DPlayerMoveController : MonoBehaviour
         }
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //^ had to readd freezerotation as otherwise character becomes accidental badly trained acrobat
+        //^ had to re-add freezerotation as otherwise character tries to pursue their secret acrobatic dreams
 
 
         if (isJump && isGrounded)
