@@ -9,14 +9,13 @@ public class P2DPlayerMoveController : MonoBehaviour
 {
     public Enemy enemy;
 
-    private float moveForce = 7;
-    private float jumpForce = 12;
     // public float bounceForce = 20;
     public bool facingRight = true;
-    private float extraGravity = 10;
+    public bool walked;
 
 
-
+    private float moveForce = 7;
+    private float jumpForce = 12;
     // Start facing right (like the sprite-sheet)
     private Animator animator;
     private float h;
@@ -24,6 +23,7 @@ public class P2DPlayerMoveController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isJump;
     private List<Transform> contacts = new();
+    private float extraGravity = 10;
     Coroutine coroutine;
 
     //---------------------------------------------------------------------------------------------
@@ -40,6 +40,10 @@ public class P2DPlayerMoveController : MonoBehaviour
     {
         GroundedMove();
 
+        if (h > 0 | h < 0)
+        {
+            walked = true;
+        }
 
         // Pass in the current velocity of the RigidBody2D
         // The speed parameter of the Animator now knows
@@ -55,22 +59,6 @@ public class P2DPlayerMoveController : MonoBehaviour
         else if (h > 0 && !facingRight)
             ReverseImage();
 
-
-       /* if (rb.velocity.y > 0)
-        {
-
-            animator.SetBool("Jumping", true);
-            animator.SetBool("Falling", false);
-        }
-
-        if (rb.velocity.y < 0)
-        {
-            animator.SetBool("Jumping", false);
-            animator.SetBool("Falling", true);
-
-        } */
-       //above code is what was previously used, but caused an issue on one
-       //platform where playercharacter was stuck in the jumping animation
 
         bool isrising = rb.velocity.y > 0;
                 animator.SetBool("Jumping", isrising);
