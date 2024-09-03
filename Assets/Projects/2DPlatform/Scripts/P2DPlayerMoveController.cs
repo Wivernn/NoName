@@ -12,6 +12,7 @@ public class P2DPlayerMoveController : MonoBehaviour
     // public float bounceForce = 20;
     public bool facingRight = true;
     public bool walked;
+    public bool jumped;
 
 
     private float moveForce = 7;
@@ -43,6 +44,11 @@ public class P2DPlayerMoveController : MonoBehaviour
         if (h > 0 | h < 0)
         {
             walked = true;
+        }
+
+        if (rb.velocity.y > 0)
+        {
+            jumped= true;
         }
 
         // Pass in the current velocity of the RigidBody2D
