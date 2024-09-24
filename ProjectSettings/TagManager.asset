@@ -13,6 +13,7 @@ TagManager:
   - Ladder/On
   - Ladder/Off
   - Hidden
+  - Success
   layers:
   - Default
   - TransparentFX

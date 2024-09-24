@@ -1613,9 +1613,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772697299326298724, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ccad869fad961cf41ab8e4d1be870bc7, type: 3}
+    - target: {fileID: 4772697299326298724, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 0603346c2bb2462438fe5955b9e56429, type: 2}
+    - target: {fileID: 6371123654912220869, guid: ca85d997fd05abb44bf342d9aa543902, type: 3}
+      propertyPath: musicStart
+      value: 
+      objectReference: {fileID: 8300000, guid: ccad869fad961cf41ab8e4d1be870bc7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
